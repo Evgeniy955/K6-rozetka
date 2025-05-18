@@ -1,0 +1,31 @@
+name: Run K6 Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-k6:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 Клонирование репозитория
+        uses: actions/checkout@v4
+
+      - name: 🔧 Установка K6
+        run: |
+          sudo apt update
+          sudo apt install -y k6
+
+      - name: 🚀 Запуск всех тестов
+        run: |
+          cd k6-tests
+          chmod +x run-all.sh
+          ./run-all.sh
+
+      - name: 📎 Сохранение HTML-отчета как артефакта
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-report
+          path: k6-tests/summary.html
