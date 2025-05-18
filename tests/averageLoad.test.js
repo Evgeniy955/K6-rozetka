@@ -1,6 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
-import { handleSummary } from './summary.js';
+import { handleSummary } from '../summary.js';
 
 // Average Load тест: проверка системы при стандартной ожидаемой нагрузке
 export const options = {

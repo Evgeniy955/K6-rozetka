@@ -12,22 +12,22 @@ run_test() {
 # Меню доступных тестов
 case "$1" in
   average)
-    run_test "averageLoad.test.js"
+    run_test "tests/averageLoad.test.js"
     ;;
   breakpoint)
-    run_test "breakpoint.test.js"
+    run_test "tests/breakpoint.test.js"
     ;;
   smoke)
-    run_test "smoke.test.js"
+    run_test "tests/smoke.test.js"
     ;;
   soak)
-    run_test "soak.test.js"
+    run_test "tests/soak.test.js"
     ;;
   spike)
-    run_test "spike.test.js"
+    run_test "tests/spike.test.js"
     ;;
   stress)
-    run_test "stress.test.js"
+    run_test "tests/stress.test.js"
     ;;
   all)
     for test in averageLoad.test.js breakpoint.test.js smoke.test.js soak.test.js spike.test.js stress.test.js; do
