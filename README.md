@@ -13,7 +13,7 @@
 
 3. Run:
    ```bash
-   k6 run my-first-test.js
+   k6 run tests/browserTest.test.js
     ```
    
 4. Run use .sh file:
